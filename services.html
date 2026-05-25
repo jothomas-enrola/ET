@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Food &amp; Feelings</title>
+  <meta name="description" content="Therapy services for anxiety, disordered eating, body image, depression, self worth, and relationships. In-person in Auckland or via teletherapy across New Zealand.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --teal: #1a9e96;
+  --teal-dark: #158780;
+  --teal-light: #e6f5f4;
+  --cream: #faf6ef;
+  --cream-dark: #f0e9dd;
+  --sage: #c8ddd0;
+  --sage-light: #e4f0e8;
+  --charcoal: #2d3436;
+  --gray: #636e72;
+  --gray-light: #b2bec3;
+  --white: #ffffff;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 1200px;
+  --section-padding: 6rem 1.5rem;
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  line-height: 1.7;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--teal-dark);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ========== NAVIGATION ========== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow var(--transition);
+}
+
+.nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.nav-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--teal);
+}
+
+.nav-cta {
+  background: var(--teal);
+  color: var(--white) !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+.nav-cta:hover {
+  background: var(--teal-dark);
+  color: var(--white) !important;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ========== HERO ========== */
+
+.hero {
+  padding: 10rem 1.5rem 6rem;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sage-light) 50%, var(--teal-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(26, 158, 150, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200, 221, 208, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 720px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(26, 158, 150, 0.1);
+  color: var(--teal);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--gray);
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--teal-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 158, 150, 0.3);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+
+.btn-secondary:hover {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  transform: translateY(-2px);
+}
+
+/* ========== SECTIONS ========== */
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-cream {
+  background: var(--cream);
+}
+
+.section-sage {
+  background: var(--sage-light);
+}
+
+.section-teal {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+.section-teal .section-header p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========== RESONATE SECTION ========== */
+
+.resonate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.resonate-image {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--sage) 0%, var(--teal-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.resonate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resonate-list {
+  list-style: none;
+}
+
+.resonate-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 2.2rem;
+  font-size: 1rem;
+  color: var(--charcoal);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.resonate-list li:last-child {
+  border-bottom: none;
+}
+
+.resonate-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  width: 20px;
+  height: 20px;
+  background: var(--teal);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ========== SERVICES CARDS ========== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2.2rem;
+  transition: all var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--teal-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--teal);
+}
+
+.service-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.service-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-cream .service-card {
+  background: var(--white);
+}
+
+/* ========== EMMA / ABOUT PREVIEW ========== */
+
+.about-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-photo-wrapper {
+  position: relative;
+}
+
+.about-photo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: 12px;
+  bottom: 12px;
+  border: 3px solid var(--teal);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--cream);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-text h2 em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+.about-text p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+.about-text .btn {
+  margin-top: 1rem;
+}
+
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.credential-tag {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* ========== WORK TOGETHER ========== */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.work-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.work-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+}
+
+.work-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--white);
+}
+
+.work-card h3 {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.work-card p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+/* ========== CTA SECTION ========== */
+
+.cta-section {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  background: var(--cream);
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: var(--gray);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+}
+
+.cta-contact {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.cta-contact a {
+  font-weight: 600;
+}
+
+/* ========== ABOUT PAGE ========== */
+
+.about-hero {
+  padding: 10rem 1.5rem 4rem;
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--teal-light) 100%);
+  text-align: center;
+}
+
+.about-hero h1 {
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  color: var(--gray);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.about-full {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-photo-sticky {
+  position: sticky;
+  top: 100px;
+}
+
+.approach-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.approach-section p {
+  color: var(--gray);
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+.treatment-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.treatment-list li {
+  padding: 0.7rem 1rem 0.7rem 2.2rem;
+  background: var(--white);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.treatment-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+.inclusive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.inclusive-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.inclusive-item svg {
+  width: 32px;
+  height: 32px;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.inclusive-item p {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+/* ========== SERVICES PAGE ========== */
+
+.service-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.service-detail:last-child {
+  border-bottom: none;
+}
+
+.service-detail:nth-child(even) {
+  direction: rtl;
+}
+
+.service-detail:nth-child(even) > * {
+  direction: ltr;
+}
+
+.service-detail-icon {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--cream);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-detail-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-detail-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.service-detail-content p {
+  color: var(--gray);
+  font-size: 1.02rem;
+  margin-bottom: 1rem;
+}
+
+/* ========== QUOTE SECTION ========== */
+
+.quote-section {
+  padding: 5rem 1.5rem;
+  background: var(--sage-light);
+  text-align: center;
+}
+
+.quote-section blockquote {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--charcoal);
+  font-style: italic;
+  line-height: 1.5;
+  position: relative;
+}
+
+.quote-section blockquote::before {
+  content: '\201C';
+  font-size: 5rem;
+  color: var(--teal);
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+  background: var(--charcoal);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4rem 1.5rem 2rem;
+}
+
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .nav-logo {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+/* ========== MOBILE MENU ========== */
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-cta {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .hero {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .resonate-grid,
+  .about-preview,
+  .about-full {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-photo-sticky {
+    position: static;
+  }
+
+  .about-full {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .service-detail:nth-child(even) {
+    direction: ltr;
+  }
+
+  .treatment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .inclusive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-full {
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+  }
+
+  .treatment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .inclusive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== DECORATIVE LEAF SVG ========== */
+
+.leaf-decoration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.leaf-decoration svg {
+  width: 56px;
+  height: 56px;
+  color: var(--teal);
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 8c-2 4-6 6-10 6 0 4 2 8 6 10-4 2-6 6-6 10 4 0 8-2 10-6 2 4 6 6 10 6 0-4-2-8-6-10 4-2 6-6 6-10-4 0-8 2-10 6-2-4-6-6-10-6z" fill="currentColor" opacity="0.2"/>
+          <path d="M20 4c-1.5 5-5.5 8.5-10.5 9.5 1 5 4.5 9 9.5 10.5-5 1.5-8.5 5.5-9.5 10.5 5-1 9-4.5 10.5-9.5 1.5 5 5.5 8.5 10.5 9.5-1-5-4.5-9-9.5-10.5 5-1.5 8.5-5.5 9.5-10.5-5 1-9 4.5-10.5 9.5z" fill="currentColor"/>
+        </svg>
+        Food &amp; Feelings
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="mailto:info@foodandfeelings.co.nz" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h1 class="fade-in">Services</h1>
+      <p class="fade-in">Evidence-based therapy tailored to your individual goals, delivered with warmth and without judgement.</p>
+    </div>
+  </section>
+
+  <!-- Detailed Services -->
+  <section class="section">
+    <div class="container">
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop&q=80" alt="Calm mountain landscape representing peace from anxiety">
+        </div>
+        <div class="service-detail-content">
+          <h3>Anxiety &amp; Stress</h3>
+          <p>Find relief from racing thoughts, constant worry, and the weight of overwhelm. Anxiety can feel all-consuming, but with the right support, you can learn to manage it effectively.</p>
+          <p>Together, we'll explore the root causes of your anxiety and develop practical, evidence-based strategies to help you feel calmer and more in control of your life.</p>
+        </div>
+      </div>
+
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=450&fit=crop&q=80" alt="Colourful healthy food representing a positive relationship with eating">
+        </div>
+        <div class="service-detail-content">
+          <h3>Disordered Eating</h3>
+          <p>Heal your relationship with food and learn to eat more intuitively, or overcome your picky eating. Whether you struggle with emotional eating, binge-eating, compulsive eating, restrictive eating, or ARFID, therapy can help.</p>
+          <p>I'll support you to identify and overcome triggers, decrease obsessive thoughts about food and weight, and tune into hunger and satiety signals for a more peaceful relationship with food.</p>
+        </div>
+      </div>
+
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&h=450&fit=crop&q=80" alt="Sunlight through trees representing self-acceptance and body positivity">
+        </div>
+        <div class="service-detail-content">
+          <h3>Body Image</h3>
+          <p>Reduce negative thoughts, anxiety, and shame about your body. Body image struggles can affect every area of your life, from what you wear to how you show up in relationships.</p>
+          <p>We'll work together to challenge unhelpful beliefs, build self-compassion, and develop a kinder, more accepting relationship with your body.</p>
+        </div>
+      </div>
+
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=450&fit=crop&q=80" alt="Calm ocean representing hope and recovery from depression">
+        </div>
+        <div class="service-detail-content">
+          <h3>Depression</h3>
+          <p>Low mood can make everything feel heavy, making it difficult to get out of bed and connect with others. Depression can leave you feeling isolated, hopeless, and exhausted.</p>
+          <p>Therapy offers a safe space to explore what's underneath, reconnect with what matters, and gradually rebuild a sense of energy and purpose.</p>
+        </div>
+      </div>
+
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&h=450&fit=crop&q=80" alt="Person standing tall representing growing self-worth and confidence">
+        </div>
+        <div class="service-detail-content">
+          <h3>Self Worth</h3>
+          <p>Learn to accept yourself more fully and stand up to your internal bully. Low self-worth often develops early and can shape how you move through the world as an adult.</p>
+          <p>Together, we'll explore the origins of your self-critic and build a stronger, more compassionate relationship with yourself.</p>
+        </div>
+      </div>
+
+      <div class="service-detail fade-in">
+        <div class="service-detail-icon">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=450&fit=crop&q=80" alt="People connecting representing healthy relationships">
+        </div>
+        <div class="service-detail-content">
+          <h3>Relationships</h3>
+          <p>Understand patterns and ways of being in your relationships and how to keep yourself emotionally safe, without putting up walls.</p>
+          <p>We'll explore how past experiences shape your relationship patterns and develop new ways of connecting that feel safe, authentic, and fulfilling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work Together -->
+  <section class="section section-teal">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>How We Can Work Together</h2>
+        <p>Personalised therapy designed around your goals and comfort, in a safe, non-judgemental space.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card fade-in">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Individual Therapy</h3>
+          <p>One-on-one support from rooms in Parnell and Mt Albert, Auckland.</p>
+        </div>
+        <div class="work-card fade-in">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Teletherapy</h3>
+          <p>Secure video sessions for convenience, privacy, and accessibility from anywhere in New Zealand.</p>
+        </div>
+        <div class="work-card fade-in">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Free Consultation</h3>
+          <p>A complimentary 15-minute call to discuss your needs and see if we're a good fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- You're In the Right Place -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="resonate-grid">
+        <div class="fade-in">
+          <h2>You're In the Right Place If Any of These Resonate With You</h2>
+          <p style="color: var(--gray); margin-top: 1rem;">There's no right or wrong time to seek support. If something is weighing on you, you deserve a space to explore it.</p>
+        </div>
+        <ul class="resonate-list fade-in">
+          <li>You want a healthier relationship with food that is sustainable for the future</li>
+          <li>You're worried or feeling uncomfortable about weight gain</li>
+          <li>You're starting a GLP-1 and want to set yourself up for success</li>
+          <li>You're considering commencing or coming off a GLP-1 and want an informed, impartial place to discuss this decision</li>
+          <li>You engage in eating patterns you're concerned with, such as emotional eating, binge-eating, or restrictive eating</li>
+          <li>You are struggling with body image or self-compassion</li>
+          <li>You want to build your confidence and self-worth</li>
+          <li>You want to understand deeper issues underpinning your relationship with food and your body</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <h2>Ready to Take the First Step?</h2>
+      <p>Your first message doesn't need to be perfectly worded. If you're curious about whether therapy might be right for you, I'd love to hear from you.</p>
+      <a href="mailto:info@foodandfeelings.co.nz" class="btn btn-primary">Book a Free Consultation</a>
+      <p class="cta-contact">or email directly at <a href="mailto:info@foodandfeelings.co.nz">info@foodandfeelings.co.nz</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4c-1.5 5-5.5 8.5-10.5 9.5 1 5 4.5 9 9.5 10.5-5 1.5-8.5 5.5-9.5 10.5 5-1 9-4.5 10.5-9.5 1.5 5 5.5 8.5 10.5 9.5-1-5-4.5-9-9.5-10.5 5-1.5 8.5-5.5 9.5-10.5-5 1-9 4.5-10.5 9.5z" fill="currentColor"/>
+          </svg>
+          Food &amp; Feelings
+        </a>
+        <p>Compassionate therapy for adults seeking clarity, healing, and meaningful change. Based in Auckland, New Zealand.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Emma</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mailto:info@foodandfeelings.co.nz">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:info@foodandfeelings.co.nz">info@foodandfeelings.co.nz</a></li>
+          <li>Parnell &amp; Mt Albert, Auckland</li>
+          <li>New Zealand</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Food &amp; Feelings. All rights reserved.</span>
+      <span>NZAC Registered Counsellor</span>
+    </div>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', function () {
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+
+  links.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+
+  var nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  var faders = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    faders.forEach(function (el) { observer.observe(el); });
+  } else {
+    faders.forEach(function (el) { el.classList.add('visible'); });
+  }
+});
+
+</script>
+</body>
+</html>
