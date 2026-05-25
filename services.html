@@ -888,14 +888,13 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
   }
 
   .nav-links {
-    position: fixed;
+    position: absolute;
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
     background: #ffffff;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
     flex-direction: column;
     justify-content: flex-start;
     padding: 2rem 1.5rem;
@@ -904,6 +903,7 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
     transition: transform var(--transition);
     z-index: 9999;
     overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
 
   .nav-links.open {
@@ -1190,28 +1190,6 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
           <h3>Free Consultation</h3>
           <p>A complimentary 15-minute call to discuss your needs and see if we're a good fit.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- You're In the Right Place -->
-  <section class="section section-cream">
-    <div class="container">
-      <div class="resonate-grid">
-        <div class="fade-in">
-          <h2>You're In the Right Place If Any of These Resonate With You</h2>
-          <p style="color: var(--gray); margin-top: 1rem;">There's no right or wrong time to seek support. If something is weighing on you, you deserve a space to explore it.</p>
-        </div>
-        <ul class="resonate-list fade-in">
-          <li>You want a healthier relationship with food that is sustainable for the future</li>
-          <li>You're worried or feeling uncomfortable about weight gain</li>
-          <li>You're starting a GLP-1 and want to set yourself up for success</li>
-          <li>You're considering commencing or coming off a GLP-1 and want an informed, impartial place to discuss this decision</li>
-          <li>You engage in eating patterns you're concerned with, such as emotional eating, binge-eating, or restrictive eating</li>
-          <li>You are struggling with body image or self-compassion</li>
-          <li>You want to build your confidence and self-worth</li>
-          <li>You want to understand deeper issues underpinning your relationship with food and your body</li>
-        </ul>
       </div>
     </div>
   </section>

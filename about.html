@@ -888,14 +888,13 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
   }
 
   .nav-links {
-    position: fixed;
+    position: absolute;
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
     background: #ffffff;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
     flex-direction: column;
     justify-content: flex-start;
     padding: 2rem 1.5rem;
@@ -904,6 +903,7 @@ h3 { font-size: clamp(1.3rem, 3vw, 1.6rem); }
     transition: transform var(--transition);
     z-index: 9999;
     overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
 
   .nav-links.open {
